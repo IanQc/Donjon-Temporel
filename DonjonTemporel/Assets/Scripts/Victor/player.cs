@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    /*
+    public GameObject spriteIndiceIn;
+    public GameObject spriteIndiceTalk;
+    public GameObject spriteIndiceOut;
+    */
     public GameObject videoIndiceIn;
     public GameObject videoIndiceTalk;
     public GameObject videoIndiceOut;
     public GameObject canvaIndiceIn;
     public GameObject canvaIndiceTalk;
     public GameObject canvaIndiceOut;
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,13 +27,18 @@ public class player : MonoBehaviour
             canvaIndiceIn.SetActive(true);
             
 
-            StartCoroutine(timerUnSec());
+            StartCoroutine(timerUnSecEnter());
 
-            videoIndiceIn.SetActive(false);
-            canvaIndiceIn.SetActive(false);
+            
+            IEnumerator timerUnSecEnter()
+            {
+                yield return new WaitForSeconds(1f);
+                videoIndiceIn.SetActive(false);
+                canvaIndiceIn.SetActive(false);
 
-            videoIndiceTalk.SetActive(true);
-            canvaIndiceTalk.SetActive(true);
+                videoIndiceTalk.SetActive(true);
+                canvaIndiceTalk.SetActive(true);
+            }
         }
     }
 
@@ -43,17 +54,19 @@ public class player : MonoBehaviour
             videoIndiceOut.SetActive(true);
             canvaIndiceOut.SetActive(true);
 
-            StartCoroutine(timerUnSec());
+            StartCoroutine(timerUnSecExit());
 
-            videoIndiceOut.SetActive(false);
-            canvaIndiceOut.SetActive(false);
+            
+            IEnumerator timerUnSecExit()
+            {
+                yield return new WaitForSeconds(1f);
+                videoIndiceOut.SetActive(false);
+                canvaIndiceOut.SetActive(false);
+            }
         }
         
     }
 
-    IEnumerator timerUnSec()
-    {
-        yield return new WaitForSeconds(1f);
-    }
+    
 
 }
