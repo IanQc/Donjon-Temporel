@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    
+    public GameObject imgIndiceIn;
+    public GameObject imgIndiceTalk;
+    public GameObject imgIndiceOut;
+
+    public GameObject imgIndiceTalkText;
     /*
-    public GameObject spriteIndiceIn;
-    public GameObject spriteIndiceTalk;
-    public GameObject spriteIndiceOut;
-    */
     public GameObject videoIndiceIn;
     public GameObject videoIndiceTalk;
     public GameObject videoIndiceOut;
     public GameObject canvaIndiceIn;
     public GameObject canvaIndiceTalk;
     public GameObject canvaIndiceOut;
-    
+    */
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,8 +25,8 @@ public class player : MonoBehaviour
         {
             Debug.Log("enter collider");
 
-            videoIndiceIn.SetActive(true);
-            canvaIndiceIn.SetActive(true);
+            imgIndiceIn.SetActive(true);
+            //canvaIndiceIn.SetActive(true);
             
 
             StartCoroutine(timerUnSecEnter());
@@ -33,11 +35,13 @@ public class player : MonoBehaviour
             IEnumerator timerUnSecEnter()
             {
                 yield return new WaitForSeconds(1f);
-                videoIndiceIn.SetActive(false);
-                canvaIndiceIn.SetActive(false);
+                imgIndiceIn.SetActive(false);
+                //canvaIndiceIn.SetActive(false);
 
-                videoIndiceTalk.SetActive(true);
-                canvaIndiceTalk.SetActive(true);
+                imgIndiceTalk.SetActive(true);
+                //canvaIndiceTalk.SetActive(true);
+
+                imgIndiceTalkText.SetActive(true);
             }
         }
     }
@@ -48,11 +52,13 @@ public class player : MonoBehaviour
         {
             Debug.Log("exit collider");
 
-            videoIndiceTalk.SetActive(false);
-            canvaIndiceTalk.SetActive(false);
+            imgIndiceTalk.SetActive(false);
+            //canvaIndiceTalk.SetActive(false);
 
-            videoIndiceOut.SetActive(true);
-            canvaIndiceOut.SetActive(true);
+            imgIndiceTalkText.SetActive(false);
+
+            imgIndiceOut.SetActive(true);
+            //canvaIndiceOut.SetActive(true);
 
             StartCoroutine(timerUnSecExit());
 
@@ -60,8 +66,8 @@ public class player : MonoBehaviour
             IEnumerator timerUnSecExit()
             {
                 yield return new WaitForSeconds(1f);
-                videoIndiceOut.SetActive(false);
-                canvaIndiceOut.SetActive(false);
+                imgIndiceOut.SetActive(false);
+                //canvaIndiceOut.SetActive(false);
             }
         }
         
