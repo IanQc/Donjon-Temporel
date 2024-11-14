@@ -32781,10 +32781,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 40000
+  m_Intensity: 26816.322
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
-  m_InnerSpotPercent: 0
+  m_InnerSpotPercent: 4
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
   m_VolumetricDimmer: 1.68
@@ -32800,7 +32800,7 @@ MonoBehaviour:
   m_ShapeRadius: 0.025
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
-  m_CustomSpotLightShadowCone: 30
+  m_CustomSpotLightShadowCone: 8
   m_MaxSmoothness: 0.99
   m_ApplyRangeAttenuation: 1
   m_DisplayAreaLightEmissiveMesh: 0
@@ -32902,11 +32902,11 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.51397294, g: 0.5529926, b: 0.6603774, a: 1}
-  m_Intensity: 186833.44
+  m_Color: {r: 0.62411004, g: 0.64615005, b: 0.7075472, a: 1}
+  m_Intensity: 580840.9
   m_Range: 182.1
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
+  m_SpotAngle: 13.9
+  m_InnerSpotAngle: 8
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -32946,7 +32946,7 @@ Light:
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
   m_BounceIntensity: 1
-  m_ColorTemperature: 7139
+  m_ColorTemperature: 12430
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0.2734375, y: 18, z: 4, w: 0}
   m_UseBoundingSphereOverride: 0
@@ -66299,7 +66299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters:
     albedo: {r: 0.4716981, g: 0.4716981, b: 0.4716981, a: 1}
-    meanFreePath: 58.6
+    meanFreePath: 42.3
     blendingMode: 1
     priority: 0
     anisotropy: 0
