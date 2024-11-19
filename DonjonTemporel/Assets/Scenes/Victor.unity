@@ -1376,6 +1376,48 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 056b8b9dea19bc443bfa39dd07ce77ac, type: 3}
+--- !u!1 &491879036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8651182105549720391, guid: b1c331d81d39c0e4c94106b79f1b6b7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 953399455585451894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &491879039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491879036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cccb42f610952604ea5af7b2f13a5307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Jump Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: de13010b-79f2-40b9-a383-9597bb4380e2
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -1032472010050706002, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  jumpHeigt: 3
+  cc: {fileID: 491879042}
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!143 &491879042 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 2552045420715727332, guid: b1c331d81d39c0e4c94106b79f1b6b7f,
+    type: 3}
+  m_PrefabInstance: {fileID: 953399455585451894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &567965587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10622,7 +10664,7 @@ GameObject:
   - component: {fileID: 2043995837}
   - component: {fileID: 2043995836}
   - component: {fileID: 2043995835}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: test-plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11038,7 +11080,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8651182105549720391, guid: b1c331d81d39c0e4c94106b79f1b6b7f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 491879039}
   m_SourcePrefab: {fileID: 100100000, guid: b1c331d81d39c0e4c94106b79f1b6b7f, type: 3}
 --- !u!114 &1463858313775684396 stripped
 MonoBehaviour:
