@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Triggedr : MonoBehaviour
+public class Enigme_01 : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     [SerializeField] string tagRight;
 
     [SerializeField] UnityEvent onTriggerEnter;
@@ -16,14 +14,14 @@ public class Triggedr : MonoBehaviour
     [SerializeField] UnityEvent onTriggerEnterWrong;
 
     [SerializeField] UnityEvent onTriggerExit;
-
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == tagRight)
         {
             onTriggerEnterRight.Invoke();
             Debug.Log("enter le bon");
-        } else
+        }
+        else
         {
             onTriggerEnterWrong.Invoke();
             Debug.Log("enter le mauvais");
@@ -38,3 +36,4 @@ public class Triggedr : MonoBehaviour
         Debug.Log("leave");
     }
 }
+
