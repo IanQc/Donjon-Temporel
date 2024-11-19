@@ -6,6 +6,8 @@ TagManager:
   tags:
   - indice-test
   - IndicesTest
+  - object1Enigme
+  - object2Enigme
   layers:
   - Default
   - TransparentFX
