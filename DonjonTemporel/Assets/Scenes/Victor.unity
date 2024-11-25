@@ -12637,8 +12637,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7421035474785155837, guid: b1c331d81d39c0e4c94106b79f1b6b7f,
         type: 3}
+      propertyPath: m_EnableFly
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421035474785155837, guid: b1c331d81d39c0e4c94106b79f1b6b7f,
+        type: 3}
       propertyPath: m_MoveSpeed
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421035474785155837, guid: b1c331d81d39c0e4c94106b79f1b6b7f,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7421035474785155837, guid: b1c331d81d39c0e4c94106b79f1b6b7f,
         type: 3}
