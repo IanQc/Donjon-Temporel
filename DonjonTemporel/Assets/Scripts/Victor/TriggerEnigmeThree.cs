@@ -17,6 +17,8 @@ public class Triggedr : MonoBehaviour
 
     [SerializeField] UnityEvent onTriggerExit;
 
+    [SerializeField] UnityEvent onTriggerStay;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == tagRight)
@@ -31,7 +33,23 @@ public class Triggedr : MonoBehaviour
         onTriggerEnter.Invoke();
         Debug.Log("enter");
     }
+    /*
 
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == tagRight)
+        {
+            onTriggerEnterRight.Invoke();
+            Debug.Log("contien le bon");
+        } else
+        {
+            onTriggerEnterWrong.Invoke();
+            Debug.Log("contien le mauvais");
+        }
+        onTriggerStay.Invoke();
+        Debug.Log("reste");
+    }
+    */
     void OnTriggerExit(Collider other)
     {
         onTriggerExit.Invoke();
