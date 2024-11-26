@@ -2,22 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Presets;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class OpenUi : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject openMenu;
-    public GameObject openInstructions;
-
-    public void OpenMyUI()
+    public void quitGame()
     {
-        if (openInstructions.activeSelf)
-        {
-            openInstructions.SetActive(false);
-        }
-        else
-        {
-            openInstructions.SetActive(true);
-        }
+        Application.Quit();
     }
 }
