@@ -10,6 +10,7 @@ TagManager:
   - object2Enigme
   - Box_01
   - killzone
+  - object3Enigme
   layers:
   - Default
   - TransparentFX

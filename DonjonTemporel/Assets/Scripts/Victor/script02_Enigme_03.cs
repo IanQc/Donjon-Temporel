@@ -12,6 +12,8 @@ public class script02_Enigme_03 : MonoBehaviour
 
     public int count = 0;
 
+    public int allCount;
+
     public void addToCount()
     {
         count++;
@@ -31,7 +33,7 @@ public class script02_Enigme_03 : MonoBehaviour
     public void checkCountDoEvent()
     {
         Debug.Log("count = " + count);
-        if (count == 2)
+        if (count == allCount)
         {
             totalCount.Invoke();
         } else if (count < 0) {
