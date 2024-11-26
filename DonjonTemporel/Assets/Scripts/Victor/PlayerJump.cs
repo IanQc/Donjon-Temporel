@@ -24,8 +24,9 @@ public class PlayerJump : MonoBehaviour
  
         if (jumpButton.action.WasPressedThisFrame() && _IsGrounded)
         {
+            StartCoroutine("sautTest");
             Jump();
-            StartCoroutine("sautTest"); 
+           
         }
  
         
