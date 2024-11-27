@@ -961,7 +961,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  count: 0
+  countTotal: 0
+  allCount: 2
 --- !u!65 &205796659
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,21 +11,29 @@ public class script02_Enigme_03 : MonoBehaviour
 
     [SerializeField] UnityEvent notTotalCount;
 
-    public int count = 0;
+    private int count = 0;
+    public int countTotal = 0;
 
     public int allCount;
 
     public void addToCount()
     {
-        count++;
+        if (count >= 0)
+        {
+            count++;
+        }
         Debug.Log("count = " + count);
         checkCountDoEvent();
         Debug.Log("coun after check = " + count);
     }
 
+
     public void removeFromCount()
     {
-        count = count - 1;
+        if (count > 0)
+        {
+            count = count - 1;
+        }
         Debug.Log("count = " + count);
         checkCountDoEvent();
         Debug.Log("coun after check = " + count);
@@ -36,9 +45,9 @@ public class script02_Enigme_03 : MonoBehaviour
         if (count == allCount)
         {
             totalCount.Invoke();
-        } else if (count < 0) {
-            count = 0;
-        } 
+        }/* else if (countTotal < 0) {
+            countTotal = 0;
+        } */
         else
         {
             notTotalCount.Invoke();

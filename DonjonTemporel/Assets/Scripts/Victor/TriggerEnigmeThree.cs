@@ -25,14 +25,17 @@ public class Triggedr : MonoBehaviour
         {
             onTriggerEnterRight.Invoke();
             Debug.Log("enter le bon");
+        } else if (other.tag == "Player") 
+        {
+            Debug.Log("player enter");
         } else
         {
             onTriggerEnterWrong.Invoke();
             Debug.Log("enter le mauvais");
         }
-        onTriggerEnter.Invoke();
         Debug.Log("enter");
     }
+
     /*
 
     void OnTriggerStay(Collider other)
@@ -52,7 +55,14 @@ public class Triggedr : MonoBehaviour
     */
     void OnTriggerExit(Collider other)
     {
-        onTriggerExit.Invoke();
-        Debug.Log("leave");
+        if (other.tag == "Player")
+        {
+            Debug.Log("player leave");
+        } else
+        {
+            onTriggerExit.Invoke();
+            Debug.Log("leave");
+        }
+        
     }
 }
