@@ -11,6 +11,10 @@ TagManager:
   - Box_01
   - killzone
   - object3Enigme
+  - btn01
+  - btn02
+  - btn03
+  - btn04
   layers:
   - Default
   - TransparentFX
