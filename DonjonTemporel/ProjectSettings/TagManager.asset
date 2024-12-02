@@ -8,13 +8,21 @@ TagManager:
   - IndicesTest
   - object1Enigme
   - object2Enigme
-  - Box_01
   - killzone
   - object3Enigme
   - btn01
   - btn02
   - btn03
   - btn04
+  - Stone_02
+  - Stone_01
+  - Stone_03
+  - Stone_04
+  - Stone_05
+  - Stone_06
+  - Stone_07
+  - Stone_08
+  - Stone_09
   layers:
   - Default
   - TransparentFX

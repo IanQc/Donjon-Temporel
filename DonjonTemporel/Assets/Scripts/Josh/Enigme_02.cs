@@ -1,39 +1,95 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Enigme_01 : MonoBehaviour
+public class Enigme_02 : MonoBehaviour
 {
-    [SerializeField] string tagRight;
+    [SerializeField] string tagRight; 
+    [SerializeField] UnityEvent onTriggerEnterRight; 
+    [SerializeField] UnityEvent onTriggerEnterWrong; 
+    [SerializeField] UnityEvent onTriggerExitRight; 
+    [SerializeField] UnityEvent onEnigmeComplete;
 
-    [SerializeField] UnityEvent onTriggerEnter;
+    private bool isSocketComplete = false; 
 
-    [SerializeField] UnityEvent onTriggerEnterRight;
+    public event Action<Enigme_02> OnSocketSuccess; 
+    public event Action<Enigme_02> OnSocketFailed;  
 
-    [SerializeField] UnityEvent onTriggerEnterWrong;
 
-    [SerializeField] UnityEvent onTriggerExit;
+    public void ResetEnigme02()
+    {
+        isSocketComplete = false;
+        Debug.Log($"Enigme 02 a été reset");
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == tagRight)
+        SlateMaterialManager materialManager = other.GetComponent<SlateMaterialManager>();
+
+        if (other.tag == tagRight && !isSocketComplete)
         {
+            isSocketComplete = true;
+                if (materialManager != null)
+                {
+                    ApplyMaterial(other, materialManager.RightMaterial);
+                }
+            Debug.Log($"Socket Completé !");
+            onEnigmeComplete.Invoke();
+            OnSocketSuccess?.Invoke(this); 
             onTriggerEnterRight.Invoke();
-            Debug.Log("enter le bon");
         }
-        else
+        else if (other.tag != tagRight)
         {
+            if (materialManager != null)
+            {
+                ApplyMaterial(other, materialManager.WrongMaterial);
+            }
+
             onTriggerEnterWrong.Invoke();
-            Debug.Log("enter le mauvais");
+            Debug.Log("Mauvais Slate");
         }
-        onTriggerEnter.Invoke();
-        Debug.Log("enter");
     }
 
     void OnTriggerExit(Collider other)
     {
-        onTriggerExit.Invoke();
-        Debug.Log("leave");
+        SlateMaterialManager materialManager = other.GetComponent<SlateMaterialManager>();
+
+        if (isSocketComplete)
+        {
+            isSocketComplete = false;
+            if (materialManager != null)
+            {
+                ApplyMaterial(other, materialManager.OriginalMaterial);
+            }
+            OnSocketFailed?.Invoke(this);
+            Debug.Log($"Enigme 02 n'est plus completé");
+        }
+        else
+        {
+            if (materialManager != null)
+            {
+                ApplyMaterial(other, materialManager.OriginalMaterial);
+            }
+        }
+
+        onTriggerExitRight.Invoke();
+        Debug.Log("Slate enlevé.");
+    }
+
+    void ApplyMaterial(Collider obj, Material material)
+    {
+        MeshRenderer renderer = obj.GetComponent<MeshRenderer>();
+        if (renderer != null && material != null)
+        {
+            renderer.material = material;
+        }
     }
 }
+
+
+
+
+
 
