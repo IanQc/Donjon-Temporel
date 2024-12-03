@@ -46,7 +46,6 @@ public class Enigme_02 : MonoBehaviour
             {
                 ApplyMaterial(other, materialManager.WrongMaterial);
             }
-
             onTriggerEnterWrong.Invoke();
             Debug.Log("Mauvais Slate");
         }
@@ -63,19 +62,18 @@ public class Enigme_02 : MonoBehaviour
             {
                 ApplyMaterial(other, materialManager.OriginalMaterial);
             }
+            onTriggerExitRight.Invoke();
             OnSocketFailed?.Invoke(this);
-            Debug.Log($"Enigme 02 n'est plus completé");
+            Debug.Log($"Socket n'est plus completé");
         }
-        else
+        else if (other.tag != tagRight)
         {
             if (materialManager != null)
             {
                 ApplyMaterial(other, materialManager.OriginalMaterial);
             }
+            Debug.Log("Slate enlevé.");
         }
-
-        onTriggerExitRight.Invoke();
-        Debug.Log("Slate enlevé.");
     }
 
     void ApplyMaterial(Collider obj, Material material)

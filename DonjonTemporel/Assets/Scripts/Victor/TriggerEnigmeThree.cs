@@ -17,6 +17,8 @@ public class Triggedr : MonoBehaviour
 
     [SerializeField] UnityEvent onTriggerExit;
 
+    [SerializeField] UnityEvent onTriggerExitWrong;
+
     [SerializeField] UnityEvent onTriggerStay;
 
     void OnTriggerEnter(Collider other)
@@ -60,8 +62,17 @@ public class Triggedr : MonoBehaviour
             Debug.Log("player leave");
         } else
         {
-            onTriggerExit.Invoke();
-            Debug.Log("leave");
+            if (other.tag == tagRight)
+            {
+                onTriggerExit.Invoke();
+                Debug.Log("leave right");
+            } else
+            {
+                onTriggerExitWrong.Invoke();
+                Debug.Log("leave wrong");
+            }
+            
+            
         }
         
     }
