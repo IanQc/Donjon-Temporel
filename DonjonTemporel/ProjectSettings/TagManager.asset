@@ -23,6 +23,7 @@ TagManager:
   - Stone_07
   - Stone_08
   - Stone_09
+  - ascenseur
   layers:
   - Default
   - TransparentFX
