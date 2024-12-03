@@ -126,7 +126,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ascenseur_animation_file
-  m_Speed: 0.06
+  m_Speed: 0.003
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2106557997189842291}
