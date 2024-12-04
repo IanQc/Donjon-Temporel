@@ -15,7 +15,7 @@ public class Ascenseur : MonoBehaviour
         {
             joueur.transform.parent = plateforme.transform;
             animPlateforme.Play("ascenseur_animation_file");
-            Debug.Log("marche");
+           
         }
     }
 

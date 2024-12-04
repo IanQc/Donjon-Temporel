@@ -43,7 +43,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.25
   m_TransitionOffset: 0
   m_ExitTime: 0.75
-  m_HasExitTime: 0
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -62,7 +62,7 @@ AnimatorStateMachine:
     m_Position: {x: 410, y: 20, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2635177240482756885}
-    m_Position: {x: 250, y: 130, z: 0}
+    m_Position: {x: 360, y: 140, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -2424483371975155176}
@@ -126,7 +126,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ascenseur_animation_file
-  m_Speed: 0.003
+  m_Speed: 0.03
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2106557997189842291}
