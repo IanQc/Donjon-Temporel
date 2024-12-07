@@ -8,7 +8,7 @@ public class musique_1 : MonoBehaviour
     public AudioSource audioSource;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "MainCamera" && !audioSource.isPlaying)
+        if(other.tag == "zone_music_1" && !audioSource.isPlaying)
         {
             audioSource.Play();
         }
