@@ -24,6 +24,8 @@ TagManager:
   - Stone_08
   - Stone_09
   - ascenseur
+  - zone_music_1
+  - zone_music_2
   layers:
   - Default
   - TransparentFX
