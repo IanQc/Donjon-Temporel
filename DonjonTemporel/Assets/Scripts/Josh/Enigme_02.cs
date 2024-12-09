@@ -25,72 +25,72 @@ public class Enigme_02 : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other)
-{
-    SlateMaterialManager materialManager = other.GetComponent<SlateMaterialManager>();
-
-    if (other.tag == tagRight)
     {
-        slateCount++;
-        if (materialManager != null)
-        {
-            ApplyMaterial(other, materialManager.RightMaterial);
-        }
-        Debug.Log($"Bon Slate! Total: {slateCount}");
-        onTriggerEnterRight.Invoke();
+        SlateMaterialManager materialManager = other.GetComponent<SlateMaterialManager>();
 
-        if (slateCount == 1) 
+        if (other.tag == tagRight)
         {
-            onEnigmeComplete.Invoke();
-            OnSocketSuccess?.Invoke(this);
+            slateCount++;
+            if (materialManager != null)
+            {
+                ApplyMaterial(other, materialManager.RightMaterial);
+            }
+            Debug.Log($"Bon Slate! Total: {slateCount}");
+            onTriggerEnterRight.Invoke();
+
+            if (slateCount == 1) 
+            {
+                onEnigmeComplete.Invoke();
+                OnSocketSuccess?.Invoke(this);
+            }
         }
-    }
-    else
-    {
-        if (materialManager != null)
+        else
         {
+            if (materialManager != null)
+            {
             ApplyMaterial(other, materialManager.WrongMaterial);
+            }
+            onTriggerEnterWrong.Invoke();
+            Debug.Log("Mauvais Slate");
         }
-        onTriggerEnterWrong.Invoke();
-        Debug.Log("Mauvais Slate");
-    }
 }
 
-void OnTriggerExit(Collider other)
-{
-    SlateMaterialManager materialManager = other.GetComponent<SlateMaterialManager>();
+    void OnTriggerExit(Collider other)
+    {
+        SlateMaterialManager materialManager = other.GetComponent<SlateMaterialManager>();
 
-    if (other.tag == tagRight && slateCount > 0)
-    {
-        slateCount--;
-        if (materialManager != null)
+        if (other.tag == tagRight && slateCount > 0)
         {
-            ApplyMaterial(other, materialManager.OriginalMaterial);
+            slateCount--;
+            if (materialManager != null)
+            {
+                ApplyMaterial(other, materialManager.OriginalMaterial);
+            }
+            Debug.Log($"Bon Slate Enlevé. Total: {slateCount}");
+            if (slateCount == 0)
+            {
+                onTriggerExitRight.Invoke();
+                OnSocketFailed?.Invoke(this);
+            }
         }
-        Debug.Log($"Bon Slate Enlevé. Total: {slateCount}");
-        if (slateCount == 0)
+        else if (other.tag != tagRight)
         {
-            onTriggerExitRight.Invoke();
-            OnSocketFailed?.Invoke(this);
+            if (materialManager != null)
+            {
+                ApplyMaterial(other, materialManager.OriginalMaterial);
+            }
+            Debug.Log("Mauvais Slate Enlevé");
         }
     }
-    else if (other.tag != tagRight)
-    {
-        if (materialManager != null)
-        {
-            ApplyMaterial(other, materialManager.OriginalMaterial);
-        }
-        Debug.Log("Mauvais Slate Enlevé");
-    }
-}
 
-void ApplyMaterial(Collider obj, Material material)
-{
-    MeshRenderer renderer = obj.GetComponent<MeshRenderer>();
-    if (renderer != null && material != null)
+    void ApplyMaterial(Collider obj, Material material)
     {
-        renderer.material = material;
+        MeshRenderer renderer = obj.GetComponent<MeshRenderer>();
+        if (renderer != null && material != null)
+        {
+            renderer.material = material;
+        }
     }
-}
 }
 
 

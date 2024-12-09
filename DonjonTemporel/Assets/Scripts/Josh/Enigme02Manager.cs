@@ -11,21 +11,21 @@ public class Enigme02Manager : MonoBehaviour
     private int completedSockets = 0;
 
     void Start()
-{
-    foreach (Enigme_02 socket in sockets)
     {
-        if (socket != null)
+        foreach (Enigme_02 socket in sockets)
         {
-            socket.OnSocketSuccess += OnSocketCompleted;
-            socket.OnSocketFailed += OnSocketFailed;
-            Debug.Log($"Connecté au socket: {socket.name}");
-        }
-        else
-        {
-            Debug.LogWarning("Socket est null.");
+            if (socket != null)
+            {
+                socket.OnSocketSuccess += OnSocketCompleted;
+                socket.OnSocketFailed += OnSocketFailed;
+                Debug.Log($"Connecté au socket: {socket.name}");
+            }
+            else
+            {
+                Debug.LogWarning("Socket est null.");
+            }
         }
     }
-}
 
 
     private void OnSocketCompleted(Enigme_02 socket)

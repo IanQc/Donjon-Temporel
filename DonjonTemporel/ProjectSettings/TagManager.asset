@@ -26,6 +26,8 @@ TagManager:
   - ascenseur
   - zone_music_1
   - zone_music_2
+  - Start
+  - Present1
   layers:
   - Default
   - TransparentFX
