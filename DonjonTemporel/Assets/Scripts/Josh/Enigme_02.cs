@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
+// Code crée par moi (Joshua) et assisté par ChatGPT (Pistes pour comment procédé, débogage, etc.)
 public class Enigme_02 : MonoBehaviour
 {
     [SerializeField] string tagRight; 
