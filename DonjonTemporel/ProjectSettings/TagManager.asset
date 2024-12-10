@@ -28,6 +28,7 @@ TagManager:
   - zone_music_2
   - Start
   - Present1
+  - DetectP
   layers:
   - Default
   - TransparentFX
