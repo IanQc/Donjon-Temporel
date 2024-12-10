@@ -27,7 +27,7 @@ public class Triggedr : MonoBehaviour
         {
             onTriggerEnterRight.Invoke();
             Debug.Log("enter le bon");
-        } else if (other.tag == "Player") 
+        } else if (other.tag == "DetectP" || other.tag == "main") 
         {
             Debug.Log("player enter");
         } else

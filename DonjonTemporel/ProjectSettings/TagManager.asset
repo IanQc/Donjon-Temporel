@@ -33,6 +33,7 @@ TagManager:
   - Zone_activation_02
   - Zone_activation_03
   - Zone_activation_04
+  - main
   layers:
   - Default
   - TransparentFX
