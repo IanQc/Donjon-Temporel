@@ -29,6 +29,10 @@ TagManager:
   - Start
   - Present1
   - DetectP
+  - Zone_activation_01
+  - Zone_activation_02
+  - Zone_activation_03
+  - Zone_activation_04
   layers:
   - Default
   - TransparentFX
