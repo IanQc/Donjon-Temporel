@@ -13,7 +13,6 @@ public class Killzone : MonoBehaviour
         {
             // Déplacer le joueur à la destination de téléportation
             other.transform.position = teleportDestination.position;
-
             // Optionnel : Réinitialiser la rotation du joueur
             other.transform.rotation = teleportDestination.rotation;
         }
